@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.control label {
+  font-size: 17px;
+  font-weight: bold;
+}
+.control input,
+.control textarea {
+  font-size: inherit;
+  padding: 0.35rem;
+  border-radius: 4px;
+  border: 1px solid #c1d1d1;
+  font-size: 1.25rem;
+  color: #676969;
+}
+.control input:focus,
+.control textarea:focus {
+  background-color: #cbf8f8;
+  outline-color: teal;
+}
+.action {
+  align-self: flex-end;
+}

@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  gap: 1.5rem;
+}
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.control textarea {
+  font: inherit;
+  padding: 0.35rem;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #c1d1d1;
+  width: 70%;
+  align-self: center;
+  font-size: 1.25rem;
+}
+.control textarea:focus {
+  background-color: #cbf8f8;
+  outline-color: teal;
+}
