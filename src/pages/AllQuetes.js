@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import QuetesList from "../components/Quetes/QuetesList";
-
-const DUMMY_QUOTES = [
-  { id: "q1", author: "Max", text: "Learning React is fun!" },
-  { id: "q2", author: "Maximilian", text: "Learning React is great!" },
-];
-
+import Loading from "../components/UI/Loading";
+import useFetch from "../hooks/use-http";
+import { getAllQuotes } from "../lib/Apı";
 const AllQuetes = () => {
-  return <QuetesList quates={DUMMY_QUOTES} />;
+  const {
+    status,
+    error,
+    data: loadedQuotes,
+    sendRequest,
+  } = useFetch(getAllQuotes, true);
+  console.log(loadedQuotes)
+
+  useEffect(() => {
+    sendRequest();
+  }, [sendRequest]);
+
+  if (status === "pending") {
+    return (
+      <div className="centered">
+        <Loading />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p className="centered">{error}</p>;
+  }
+
+  if (status === "completed" && (!loadedQuotes || loadedQuotes.length === 0)) {
+    return <p className="centered">Sonuc Bulunamadı....</p>;
+  }
+
+  return <QuetesList quates={loadedQuotes} />;
 };
 
 export default AllQuetes;
