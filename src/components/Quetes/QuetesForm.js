@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Card from "../UI/Card";
+import Loading from "../UI/Loading";
 import classes from "./QuestesForm.module.css";
 const QuetesForm = (props) => {
   const authorRef = useRef();
@@ -15,6 +16,11 @@ const QuetesForm = (props) => {
   return (
     <Card>
       <form className={classes.form} onSubmit={addFormHandler}>
+        {props.isLoading && (
+          <div className={classes.loading}>
+            <Loading />
+          </div>
+        )}
         <div className={classes.control}>
           <label htmlFor="author">Author</label>
           <input id="authot" type="text" ref={authorRef} />

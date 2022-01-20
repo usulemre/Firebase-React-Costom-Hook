@@ -20,3 +20,23 @@ body {
   background-color: #11acac;
   border-color: #11acac;
 }
+.centered {
+  display: flex;
+  /* height: calc(90vh - 150px); */
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #11acac;
+  text-align: center;
+}
+.btn--flat {
+  cursor: pointer;
+  font: inherit;
+  color: teal;
+  border: none;
+  background-color: none;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+}

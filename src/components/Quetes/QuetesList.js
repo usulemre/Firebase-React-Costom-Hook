@@ -1,6 +1,7 @@
 import React from "react";
 import QuetesItem from "./QuetesItem";
 import classes from "./QuestesList.module.css";
+import Loading from "../UI/Loading";
 const QuetesList = (props) => {
   return (
     <ul className={classes.list}>
