@@ -10,7 +10,6 @@ const AllQuetes = () => {
     data: loadedQuotes,
     sendRequest,
   } = useFetch(getAllQuotes, true);
-  console.log(loadedQuotes)
 
   useEffect(() => {
     sendRequest();
